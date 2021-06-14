@@ -132,12 +132,12 @@
         </section>
         <section class="flex-shrink items-center flex py-10 place-content-center max-h-96 h-full bg-[hsl(220,40%,10%)]">
             <fieldset class="border-2 rounded-lg border-white flex p-2 xss:p-3 xs:p-4 sm:p-5 md:p-7 lg:p-10">
-                <legend class="text-white text-xl px-2">Best Projects</legend>
+                <legend class="text-white xss:text-xl px-2">You might like to know</legend>
                 <div class="mr-2 xss:mr-4 transform -translate-y-1 w-max h-auto">
-                    <h1 class="text-center xs:px-10 p-3  xs:py-5 rounded-lg xss:rounded-3xl bg-blueGray-700 text-white" style="box-shadow:inset 0px 0px 10px 1px #FFFFFF42,0px 0px 10px 2px #000000">Music Project</h1>
+                    <h1 class="text-center xs:px-10 p-3  xs:py-5 rounded-lg xss:rounded-3xl bg-blueGray-700 text-white" style="box-shadow:inset 0px 0px 10px 1px #FFFFFF42,0px 0px 10px 2px #000000">Past Of Mine</h1>
                 </div>
                 <div class="ml-2 xss:ml-4 transform -translate-y-1 w-max h-auto">
-                    <h1 class="text-center xs:px-10 p-3  xs:py-5 rounded-lg xss:rounded-3xl bg-blueGray-700 text-white" style="box-shadow:inset 0px 0px 10px 1px #FFFFFF42,0px 0px 10px 2px #000000">Blogs Project</h1>
+                    <h1 class="text-center xs:px-10 p-3  xs:py-5 rounded-lg xss:rounded-3xl bg-blueGray-700 text-white" style="box-shadow:inset 0px 0px 10px 1px #FFFFFF42,0px 0px 10px 2px #000000">Future Sights</h1>
                 </div>
             </fieldset>
         </section>
@@ -154,7 +154,7 @@
                     "
                 >
                     <p class="text-gray-500 text-sm text-center sm:text-left">
-                        © 2020 Sukhpreet —
+                        © 2021 Sukhpreet —
                         <a
                             href="https://twitter.com/Sukhpreet_LION"
                             rel="noopener noreferrer"
