@@ -25,7 +25,11 @@ module.exports = {
         extend: {
             colors:{
                 ...colors
-            }
+            },
+            fontFamily:{
+                jetMono:'JetBrains Mono, monospace',
+                round:'Nova Round, cursive'
+              }
         },
     },
     variants: {

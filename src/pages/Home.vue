@@ -1,5 +1,5 @@
 <template>
-    <section class="max-w-9xl flex flex-col" :style="{ height: windowHeight }">
+    <section class="max-w-9xl flex flex-col">
         <div
             class="
                 w-full
@@ -55,8 +55,8 @@
                         class="inline-flex rounded-md shadow"
                         style="box-shadow: 0px 0px 10px 0.5px #1c90fe99"
                     >
-                        <a
-                            href="#"
+                        <router-link
+                            to="/Projects/Typewriter"
                             class="
                                 inline-flex
                                 items-center
@@ -73,7 +73,7 @@
                             "
                         >
                             Projects
-                        </a>
+                        </router-link>
                     </div>
                     <div
                         class="ml-3 lg:ml-7 inline-flex rounded-md shadow"
@@ -133,12 +133,9 @@
         <section class="flex-shrink items-center flex py-10 place-content-center max-h-96 h-full bg-[hsl(220,40%,10%)]">
             <fieldset class="border-2 rounded-lg border-white flex p-2 xss:p-3 xs:p-4 sm:p-5 md:p-7 lg:p-10">
                 <legend class="text-white xss:text-xl px-2">You might like to know</legend>
-                <div class="mr-2 xss:mr-4 transform -translate-y-1 w-max h-auto">
-                    <h1 class="text-center xs:px-10 p-3  xs:py-5 rounded-lg xss:rounded-3xl bg-blueGray-700 text-white" style="box-shadow:inset 0px 0px 10px 1px #FFFFFF42,0px 0px 10px 2px #000000">Past Of Mine</h1>
-                </div>
-                <div class="ml-2 xss:ml-4 transform -translate-y-1 w-max h-auto">
-                    <h1 class="text-center xs:px-10 p-3  xs:py-5 rounded-lg xss:rounded-3xl bg-blueGray-700 text-white" style="box-shadow:inset 0px 0px 10px 1px #FFFFFF42,0px 0px 10px 2px #000000">Future Sights</h1>
-                </div>
+                <router-link to="/Resources" class="ml-2 xss:ml-4 transform -translate-y-1 w-max h-auto">
+                    <h1 class="text-center xs:px-10 p-3  xs:py-5 rounded-lg xss:rounded-3xl bg-[#000716] text-blueGray-200" style="box-shadow:inset 0px 0px 10px 1px #FFFFFF22,0px 0px 50px 10px #00000077">My Resources</h1>
+                </router-link>
             </fieldset>
         </section>
         <footer class="mt-auto ">
