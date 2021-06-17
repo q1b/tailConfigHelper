@@ -30,9 +30,9 @@
                     style=""
                 >
                     <span
-                        class="block text-lightBlue-600"
+                        class="block text-cyan-400"
                         style="
-                            text-shadow: 0px 0px 10px #81f4ff,0px 0px 20px #00e8fe;
+                            text-shadow: 0px 0px 1px #81f4ff,0px 0px 20px #00e8fe;
                         "
                         >Sukhpreet</span
                     >
