@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-[#000716] w-full sm:p-10 p-4 h-screen">
+    <section class="bg-[#000716] w-full sm:p-10 p-4 h-[900px]">
         <Listbox v-model="selectedResource">
             <div class="relative mt-1">
                 <ListboxButton
@@ -61,7 +61,7 @@
                             bg-white
                             rounded-md
                             shadow-lg
-                            max-h-60
+                            max-h-96
                             ring-1 ring-black ring-opacity-5
                             focus:outline-none
                         "
@@ -120,12 +120,9 @@
             :key="{ index }"
         >
             <li
-                class="
-                    max-w-[700px]
-                    px-4
-                    bg-cover bg-no-repeat bg-center
-                    rounded-lg
-                "
+                :class="[resource.name === 'Vue Js' ? '!bg-contain' : '',
+                resource.name === 'Tailwind css' ? '!bg-contain' : '',
+                'max-w-[700px] px-4 bg-cover bg-no-repeat bg-center rounded-lg']"
                 :style="{ backgroundImage: `url(${resource.imageURL})` }"
             >
                 <figure class="flex h-[150px] items-end mb-2 justify-center">
@@ -179,7 +176,7 @@ export default {
         SelectorIcon,
     },
     setup() {
-        const resources = [
+        let resources = [
             {
                 type: {
                     name: 'Icons-Library',
@@ -198,8 +195,8 @@ export default {
                     name: 'CSS-Framework',
                     items: [
                         {
-                            name: 'TailwindCss',
-                            imageURL: '',
+                            name: 'Tailwind css',
+                            imageURL: 'https://camo.githubusercontent.com/53b9876cd8e38928387c6824043b0e2772b15b1bfdb7f42d0864216abbf3dfe8/68747470733a2f2f7265666163746f72696e6775692e6e7963332e63646e2e6469676974616c6f6365616e7370616365732e636f6d2f7461696c77696e642d6c6f676f2e737667',
                             speciality:'It is a mobile first utility based css framework.',
                         },
                     ],
@@ -212,7 +209,7 @@ export default {
                     items: [
                         {
                             name: 'Vue Js',
-                            imageURL: '',
+                            imageURL: 'https://elepass.io/wp-content/uploads/2018/05/Vue-logo-001.svg',
                             speciality:'It is a framework which gives best of React and Angular .',
                         },
                     ],
@@ -232,6 +229,16 @@ export default {
                 },
             },
         ]
+        let allItem = resources.map(e=>{return e.type.items})
+        resources = [
+                    {
+                        type:{ 
+                            name:'All',
+                            items:allItem.flat()
+                            }
+                    },
+                    ...resources
+                    ]
         const selectedResource = ref(resources[0])
         return {
             resources,
