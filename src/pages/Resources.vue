@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-[#000716] w-full p-10 h-screen">
+    <section class="bg-[#000716] w-full sm:p-10 p-4 h-screen">
         <Listbox v-model="selectedResource">
             <div class="relative mt-1">
                 <ListboxButton
