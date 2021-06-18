@@ -8,7 +8,7 @@
 		  <button class="px-3 py-1.5 bg-white rounded-lg"
 		  @click="focusElement" >Click to Focus Again</button>
         <article class="p-5">
-		<FocusTrap @initialFocus='true'>
+		<FocusTrap>
             <textarea
                 v-model="typedValue"
                 class="
