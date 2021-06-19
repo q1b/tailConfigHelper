@@ -1,7 +1,16 @@
 const colors = require('tailwindcss/colors')
 module.exports = {
     mode: 'jit',
-    purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    purge: {content:['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+    safelist: [
+        'bg-lime-500',
+        'bg-green-500',
+        'bg-orange-500',
+        'bg-amber-500',
+        // ...
+        // 'lg:text-right',
+      ],
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
         screens: {
