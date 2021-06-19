@@ -119,7 +119,6 @@
             <SelectorIcon class="w-5 h-5 text-gray-400" aria-hidden="true" />
           </span>
         </ListboxButton>
-
         <transition
           leave-active-class="transition duration-100 ease-in"
           leave-from-class="opacity-100"
@@ -220,6 +219,9 @@
 		   :colors="shuffle(ColorStack)"
       />
     </section>
+    <section class="mt-28 -ml-5 w-full">
+      <custom-model />
+    </section>
   </section>
 </template>
 
@@ -227,6 +229,7 @@
 import { ref } from 'vue'
 import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
 import GrowBoxes from './Projects/GrowBoxes.vue'
+import customModel from './Projects/anouncementModelEx/index.vue'
 import {
   ListboxButton,
   ListboxOptions,
@@ -237,6 +240,7 @@ import {
 export default {
   components: {
     GrowBoxes,
+    customModel,
     ListboxButton,
     ListboxOptions,
     ListboxOption,
