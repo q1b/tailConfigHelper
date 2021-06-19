@@ -28,6 +28,7 @@ export default {
             x: x * SIZE,
             y: y * SIZE,
           }
+          console.log(entity)
           el.style.left = entity.x+ 1 + 'px'
           el.style.top = entity.y + 1 + 'px'
           el.style.width = 10 + 'px'
@@ -35,26 +36,6 @@ export default {
           el.addEventListener('click', toggle.bind(this, entity))
           entities.push(entity)
         }
-      }
-      function toggle(targetEntity) {
-        checked = !checked
-        entities.forEach(function (entity) {
-          var dx = targetEntity.x - entity.x
-          var dy = targetEntity.y - entity.y
-          var distance = Math.sqrt(dx * dx + dy * dy)
-          setTimeout(function () {
-            if (checked === true) {
-					entity.element.className = '';
-					entity.element.offsetWidth;
-					entity.element.className = 'absolute grow bg-white'
-            	// entity.element.className = 'absolute bg-white'
-            } else {
-					entity.element.className = '';
-					entity.element.offsetWidth;
-            	entity.element.className = 'absolute grow bg-rose-600'
-            }
-          }, Math.round(distance * 1.8))
-        })
       }
       setTimeout(function () {
         entities[0].element.checked = false
