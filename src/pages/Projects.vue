@@ -187,11 +187,11 @@
         grid
         z-0
         sm:scale-100
-        sm:grid-cols-2
+        grid-cols-2
         gap-4
         mt-10
         sm:mt-16
-        scale-100
+        scale-125
         md:scale-125
       "
     >
@@ -249,8 +249,8 @@ export default {
     const selectedShape = ref(Shapes[0])
     const ColorStack = [
       { start: 'bg-amber-500', end: 'bg-orange-500' },
-      { start: 'bg-orange-500', end: 'bg-lime-500' },
-      { start: 'bg-lime-500', end: 'bg-green-500' },
+      { start: 'bg-orange-500', end: 'bg-lime-400' },
+      { start: 'bg-lime-400', end: 'bg-green-500' },
       { start: 'bg-green-500', end: 'bg-emerald-500' },
       { start: 'bg-emerald-500', end: 'bg-cyan-500' },
       { start: 'bg-cyan-500', end: 'bg-blue-500' },

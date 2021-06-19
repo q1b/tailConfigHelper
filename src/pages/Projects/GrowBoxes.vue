@@ -1,14 +1,14 @@
 <template>
   <section class="flex items-center">
-    <div class="relative w-[268px] h-[268px]" ref="wrapper">
+    <div class="relative w-[100px] h-[100px] sm:w-[268px] sm:h-[268px]" ref="wrapper">
       <div
         role="button"
         :id="`${index}${unique_id}`"
-        v-for="(entity, index) in x_yArray.reverse()"
+        v-for="(entity, index) in x_yArray"
         :key="index"
         :class="[
-          shape === 'circle' ? 'rounded-full w-6 h-6' : 'rounded-none w-8 h-8',
-          `${lineColor} absolute bg-rose-600 w-6 h-6 h-calc(100%/100)`,
+          shape === 'circle' ? 'rounded-full w-4 h-4 sm:w-6 sm:h-6' : 'rounded-none w-4 h-4 sm:w-8 sm:h-8',
+          `${lineColor} absolute bg-rose-600 w-4 h-4 sm:w-6 sm:h-6 h-calc(100%/100)`,
         ]"
         :style="{
           top: entity.x + 'px',
@@ -36,6 +36,12 @@ export default {
     let resX = 10
     let resY = 10
     let size = 28
+	 if(window.innerWidth<623){
+			resX = 5
+    		resY = 5
+    		size = 22
+
+	 }
     var index = 0
     for (let i = 0; i < resX; i++) {
       for (let j = 0; j < resY; j++) {
@@ -74,23 +80,23 @@ export default {
             element.offsetWidth;
             props.shape === 'circle'
               ? (element.className =
-                  `absolute rounded-full tile w-4 h-4 grow ` + endColor)
+                  `absolute rounded-full tile w-4 h-4 sm:w-4 sm:h-4 grow ` + endColor)
               : (element.className =
-                  `absolute tile w-4 h-4 grow ` + endColor)
+                  `absolute tile w-4 h-4 sm:w-4 sm:h-4 grow ` + endColor)
             // element.className = `absolute w-4 h-4 tile grow ` + props.startColor
           } else {
             element.className = 'tile'
             element.offsetWidth
             props.shape === 'circle'
               ? (element.className =
-                  `absolute rounded-full tile w-4 h-4 grow ` + startColor)
+                  `absolute rounded-full tile w-4 h-4 sm:w-4 sm:h-4 grow ` + startColor)
               : (element.className =
-                  `absolute tile w-4 h-4 grow ` + startColor)
+                  `absolute tile w-4 h-4 sm:w-4 sm:h-4 grow ` + startColor)
           }
-        }, Math.round(distance * 1.8))
+        }, Math.round(window.innerWidth>600?(distance * 1.8):(distance*5)))
       })
     }
-    // console.log(x_yArray)
+     x_yArray.reverse()
     return {
       wrapper,
       x_yArray,
@@ -101,19 +107,23 @@ export default {
 </script>
 
 <style>
-.tile.grow {
-  animation: grow 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+div .tile.grow {
+  animation:grow 2s cubic-bezier(0.9, 1.1, 0, 1) 0s;
 }
 
 @keyframes grow {
-  0% {
-    transform: scale(1);
-  }
-  30% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0.0%{
+        width: 20px;
+        height: 20px;
+    }
+    30%{
+	     width: 200px;
+        height: 200px;
+		  /* box-shadow: 0px 0px 10px 10px #FF0060; */
+    }
+    100%{
+	     width: 20px;
+        height: 20px;
+    }
 }
 </style>
