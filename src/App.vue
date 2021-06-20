@@ -18,46 +18,11 @@
         h-[90vh]
       "
     >
-      <article
+      <article :key="value" v-for="value in range(10,1,-1)"
         class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,100%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,90%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,80%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,70%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,60%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,50%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,40%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,30%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,20%)` }"
-      ></article>
-      <article
-        class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,10%)` }"
-      ></article>
+        :style="{ backgroundColor: `hsl(${selectedColor},100%,${value}0%)`}"      
+      >
+      </article>
       <article
         class="rounded-xl w-3/4 h-10 my-1"
         :style="{ backgroundColor: `hsl(${selectedColor},100%,5%)` }"
@@ -124,7 +89,8 @@
             transition-colors
             duration-300
             ease-in-out
-            mb-2
+            sm:mb-2
+            mb-20
           "
           @click="modelOpen = true"
         >
@@ -163,6 +129,9 @@ export default {
     let modelOpen = ref(false)
     // let selectedColorName = ref('Uniy')
     let colors;
+    function range(start, stop, step){
+      return Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step))
+    }
     function ReturnTailwindColorsObject(color) {
       let index = 13
       colors = {}
@@ -188,6 +157,7 @@ export default {
       selectedColor,
       modelOpen,
       ReturnTailwindColorsObject,
+      range
     }
   },
 }
