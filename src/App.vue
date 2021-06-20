@@ -52,7 +52,6 @@
           type="range"
           min="0"
           max="360"
-          step="10"
         />
       </div>
       <div
