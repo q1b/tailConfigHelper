@@ -31,11 +31,13 @@
         leave-to="opacity-0 scale-95 "	
 		  >
 				<h1 class="mb-4 text-center text-3xl text-blueGray-600 font-bold">
-					Exciting new features are here
+					<!-- Default Exciting new features are here -->
+					<slot name="header"></slot>
 				</h1>
 				<p class="mb-4 px-4 font-medium text-justify">
-					New feauture like Mega Pro and Super disco are availabel here,
-					You can COntact Us through any means of network NOW!
+					<!-- New feauture like Mega Pro and Super disco are availabel here,
+					You can COntact Us through any means of network NOW! -->
+					<slot name="content"></slot>
 				</p>
 				<button
 					class="

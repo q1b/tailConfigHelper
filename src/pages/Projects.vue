@@ -220,7 +220,8 @@
       />
     </section>
     <section class="mt-28 -ml-5 w-full">
-      <custom-model />
+      <custom-model header='Default Exciting new features are here'  content="New feauture like Mega Pro and Super disco are availabel here,
+			You can COntact Us through any means of network NOW!" />
     </section>
   </section>
 </template>

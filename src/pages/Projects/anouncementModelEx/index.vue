@@ -39,7 +39,14 @@
         <anouncement-model
             v-model:show="modelOpen"
             :preventBackgroundScrolling="preventBackgroundScrolling"
-        ></anouncement-model>
+        >
+        <template v-slot:header>
+            {{header}}
+        </template>
+        <template v-slot:content>
+            {{content}}
+        </template>
+        </anouncement-model>
         </teleport>
         <h1 class="text-xl mb-2 text-white">Prevent Background Scrolling</h1>
         <toggle-button
@@ -53,6 +60,7 @@ import AnouncementModel from './components/AnouncementModel.vue'
 import ToggleButton from './components/toggleScrolling.vue'
 
 export default {
+    props:['header','content'],
     components: {
         AnouncementModel,
         ToggleButton,
