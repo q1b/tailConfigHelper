@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-12 place-items-center">
+  <div class="grid grid-cols-12 place-items-center bg-blueGray-900">
     <section
       class="
         flex
@@ -8,9 +8,14 @@
         flex-col
         items-center
         bg-[#000716]
-        p-4
-        h-screen
-        w-full
+        sm:p-4
+        px-2
+        py-8
+        sm:py-12
+        rounded-3xl
+        w-[90%]
+        max-w-[400px]
+        h-[90vh]
       "
     >
       <article
@@ -67,6 +72,7 @@
         place-items-center
         h-screen
         flex flex-col
+        items-center
         justify-center
         place-content-center
         col-start-10 col-end-13
@@ -74,7 +80,7 @@
         w-full
       "
     >
-      <div class="inline-block w-[20px] h-[300px] rounded-full">
+      <div class="inline-block w-[20px] h-[300px] rounded-full mt-auto">
         <input
           v-model.number="selectedColor"
           class="absolute m-0 h-[20px] w-[300px] origin-t -rotate-90"
@@ -91,9 +97,11 @@
           flex
           items-center
           justify-center
-          bg-white
+          bg-blueGray-900
+          p-2
           self-end
           mt-auto
+          mb-5
         "
       >
         <button
@@ -120,7 +128,7 @@
           "
           @click="modelOpen = true"
         >
-          Open Model
+          Copy
         </button>
         <teleport to="body">
           <copied-color-palette-model
