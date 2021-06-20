@@ -112,13 +112,10 @@
       </div>
     </section>
   </div>
-  <div class="">
-    <router-view />
-  </div>
 </template>
 <script>
-import { onMounted, onUpdated, reactive, ref, watch } from 'vue'
-import CopiedColorPaletteModel from './pages/Projects/anouncementModelEx/components/AnouncementModel.vue'
+import { ref } from 'vue'
+import CopiedColorPaletteModel from './components/AnouncementModel.vue'
 
 export default {
   components: {
