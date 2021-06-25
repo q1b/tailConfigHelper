@@ -18,11 +18,12 @@
         h-[90vh]
       "
     >
-      <article :key="value" v-for="value in range(10,1,-1)"
+      <article
+        :key="value"
+        v-for="value in range(10, 1, -1)"
         class="rounded-xl w-3/4 h-10 my-1"
-        :style="{ backgroundColor: `hsl(${selectedColor},100%,${value}0%)`}"      
-      >
-      </article>
+        :style="{ backgroundColor: `hsl(${selectedColor},100%,${value}0%)` }"
+      ></article>
       <article
         class="rounded-xl w-3/4 h-10 my-1"
         :style="{ backgroundColor: `hsl(${selectedColor},100%,5%)` }"
@@ -104,7 +105,13 @@
               You can Copy this,And paste it into tailwindcss config file
             </template>
             <template #content>
-              <pre class=" select-all text-black">{{JSON.stringify(ReturnTailwindColorsObject(selectedColor),null,3)}}</pre>
+              <pre class="select-all text-black">{{
+                JSON.stringify(
+                  ReturnTailwindColorsObject(selectedColor),
+                  null,
+                  3
+                )
+              }}</pre>
             </template>
           </copied-color-palette-model>
         </teleport>
@@ -124,9 +131,12 @@ export default {
     const selectedColor = ref(340)
     let modelOpen = ref(false)
     // let selectedColorName = ref('Uniy')
-    let colors;
-    function range(start, stop, step){
-      return Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step))
+    let colors
+    function range(start, stop, step) {
+      return Array.from(
+        { length: (stop - start) / step + 1 },
+        (_, i) => start + i * step
+      )
     }
     function ReturnTailwindColorsObject(color) {
       let index = 13
@@ -141,16 +151,17 @@ export default {
           index--
         } else if (i <= 10) {
           colors.ColorName[parseInt(`${i - 2}00`)] = `hsl(${color},100%,${
-            index - 1
+            index - 3
           }0%)`
           index--
-        } else if( i===11 ) {
+        } else if (i === 11) {
           colors.ColorName[900] = `hsl(${color},100%,5%)`
-          index--  
-        } else{
+          index--
+        } else {
           colors.ColorName[1000] = `hsl(${color},100%,2.5%)`
-          index--  
+          index--
         }
+      }
       return colors
     }
     // // const { text, isSupported, copy } = useClipboard()
@@ -158,7 +169,7 @@ export default {
       selectedColor,
       modelOpen,
       ReturnTailwindColorsObject,
-      range
+      range,
     }
   },
 }
