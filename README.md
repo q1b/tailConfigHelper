@@ -1,7 +1,5 @@
-# Quickstart template
-The code from the video tutorial Getting started with Vue 3 + Vite in 2021 (feat. Tailwind CSS, Vue Router, Vuex, ESLint & Prettier): https://www.youtube.com/watch?v=O8epzPrsADI
+# Tailwind Colors Object creator 
 
-After cloning, go to the project folder and install node modules
-`npm install`
+## Through this website You can create your own custom themed colors of choice.
 
-This is essentially a fresh install of Vue 3 + Vite, ESLint, Prettier, TailwindCSS, Vue Router, Vuex
+## it is open source and written in vue js feel free to contribute .
