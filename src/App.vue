@@ -134,18 +134,23 @@ export default {
       colors.ColorName = {}
       for (let i = 1; i < 13; i++) {
         if (index === 13) {
-          colors.ColorName[25] = `hsl(${color},100%,2.5%)`
+          colors.ColorName[25] = `hsl(${color},100%,100%)`
           index--
         } else if (index === 12) {
-          colors.ColorName[50] = `hsl(${color},100%,5%)`
+          colors.ColorName[50] = `hsl(${color},100%,90%)`
           index--
-        } else {
+        } else if (i <= 10) {
           colors.ColorName[parseInt(`${i - 2}00`)] = `hsl(${color},100%,${
             index - 1
           }0%)`
           index--
+        } else if( i===11 ) {
+          colors.ColorName[900] = `hsl(${color},100%,5%)`
+          index--  
+        } else{
+          colors.ColorName[1000] = `hsl(${color},100%,2.5%)`
+          index--  
         }
-      }
       return colors
     }
     // // const { text, isSupported, copy } = useClipboard()
